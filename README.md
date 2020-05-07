@@ -14,11 +14,11 @@ Feel free to contact us with any questions at anonymizer@understand.ai.
 
 ## Examples
 
-![License Plate Example Raw](images/Riaz_1.jpg?raw=true "Title")
-![License Plate Anonymized](output/Riaz_1_anonymized.jpg?raw=true "Title")
+![Face_Example Raw](images/Riaz_1.jpg?raw=true "Title")
+![Face Anonymized](output/Riaz_1_anonymized.jpg?raw=true "Title")
 
-![Face Example Raw](images/coco01.jpg?raw=true "Title")
-![Face Example Anonymized](output/coco01_anonymized.jpg?raw=true "Title")
+![License Plate Example Raw](images/coco02.jpg?raw=true "Title")
+![License Plate Example Anonymized](output/coco02_anonymized.jpg?raw=true "Title")
 
 
 ## Installation
