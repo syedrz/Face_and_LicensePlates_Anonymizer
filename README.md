@@ -14,8 +14,8 @@ Feel free to contact us with any questions at anonymizer@understand.ai.
 
 ## Examples
 
-![Face_Example Raw](images/Riaz_1.jpg?raw=true "Title")
-![Face Anonymized](output/Riaz_1_anonymized.jpg?raw=true "Title")
+![Face_Example Raw](images/Riaz_2.jpg?raw=true "Title")
+![Face Anonymized](output/Riaz_2_anonymized.jpg?raw=true "Title")
 
 ![License Plate Example Raw](images/coco02.jpg?raw=true "Title")
 ![License Plate Example Anonymized](output/coco02_anonymized.jpg?raw=true "Title")
