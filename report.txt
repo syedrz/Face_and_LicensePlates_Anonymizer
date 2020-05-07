@@ -1,0 +1,239 @@
+Run following comaan to make files tensorflow-2 compatable.
+
+tf_upgrade_v2 --intree . --inplace --reportfile report.txt
+---
+-----
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 24 files
+Detected 5 issues that require attention
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+File: .\anonymizer\anonymization\anonymizer.py
+--------------------------------------------------------------------------------
+.\anonymizer\anonymization\anonymizer.py:17:4: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+--------------------------------------------------------------------------------
+File: .\anonymizer\obfuscation\obfuscator.py
+--------------------------------------------------------------------------------
+.\anonymizer\obfuscation\obfuscator.py:75:25: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+.\anonymizer\obfuscation\obfuscator.py:81:32: WARNING: tf.nn.conv2d called with use_cudnn_on_gpu argument, requires manual check: use_cudnn_on_gpu has been removed, behavior is now equivalentto setting it to True.
+.\anonymizer\obfuscation\obfuscator.py:87:21: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+--------------------------------------------------------------------------------
+File: .\test\anonymization\anonymizer_test.py
+--------------------------------------------------------------------------------
+.\test\anonymization\anonymizer_test.py:68:12: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+================================================================================
+Detailed log follows:
+
+================================================================================
+================================================================================
+Input tree: '.'
+================================================================================
+--------------------------------------------------------------------------------
+Processing file '.\\setup.py'
+ outputting to '.\\setup.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file '.\\anonymizer\\__init__.py'
+ outputting to '.\\anonymizer\\__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file '.\\anonymizer\\anonymization\\anonymizer.py'
+ outputting to '.\\anonymizer\\anonymization\\anonymizer.py'
+--------------------------------------------------------------------------------
+
+17:4: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file '.\\anonymizer\\anonymization\\__init__.py'
+ outputting to '.\\anonymizer\\anonymization\\__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file '.\\anonymizer\\bin\\anonymize.py'
+ outputting to '.\\anonymizer\\bin\\anonymize.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file '.\\anonymizer\\bin\\__init__.py'
+ outputting to '.\\anonymizer\\bin\\__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file '.\\anonymizer\\detection\\detector.py'
+ outputting to '.\\anonymizer\\detection\\detector.py'
+--------------------------------------------------------------------------------
+
+13:27: INFO: Renamed 'tf.GraphDef' to 'tf.compat.v1.GraphDef'
+14:17: INFO: Renamed 'tf.gfile.GFile' to 'tf.io.gfile.GFile'
+19:15: INFO: Renamed 'tf.ConfigProto' to 'tf.compat.v1.ConfigProto'
+20:23: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file '.\\anonymizer\\detection\\weights.py'
+ outputting to '.\\anonymizer\\detection\\weights.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file '.\\anonymizer\\detection\\__init__.py'
+ outputting to '.\\anonymizer\\detection\\__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file '.\\anonymizer\\obfuscation\\helpers.py'
+ outputting to '.\\anonymizer\\obfuscation\\helpers.py'
+--------------------------------------------------------------------------------
+
+75:11: INFO: Renamed 'tf.ConfigProto' to 'tf.compat.v1.ConfigProto'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file '.\\anonymizer\\obfuscation\\obfuscator.py'
+ outputting to '.\\anonymizer\\obfuscation\\obfuscator.py'
+--------------------------------------------------------------------------------
+
+44:15: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+46:18: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+69:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+70:20: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+71:19: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+75:25: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+75:25: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+81:32: WARNING: tf.nn.conv2d called with use_cudnn_on_gpu argument, requires manual check: use_cudnn_on_gpu has been removed, behavior is now equivalentto setting it to True.
+81:32: INFO: Renamed keyword argument for tf.nn.conv2d from filter to filters
+81:32: INFO: Removed argument use_cudnn_on_gpu for function tf.nn.conv2d
+87:21: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+87:21: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+96:18: INFO: Added keywords to args of function 'tf.pad'
+97:28: INFO: Renamed 'tf.nn.depthwise_conv2d_native' to 'tf.compat.v1.nn.depthwise_conv2d_native'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file '.\\anonymizer\\obfuscation\\__init__.py'
+ outputting to '.\\anonymizer\\obfuscation\\__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file '.\\anonymizer\\utils\\box.py'
+ outputting to '.\\anonymizer\\utils\\box.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file '.\\anonymizer\\utils\\__init__.py'
+ outputting to '.\\anonymizer\\utils\\__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file '.\\test\\__init__.py'
+ outputting to '.\\test\\__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file '.\\test\\anonymization\\anonymizer_test.py'
+ outputting to '.\\test\\anonymization\\anonymizer_test.py'
+--------------------------------------------------------------------------------
+
+68:12: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file '.\\test\\anonymization\\__init__.py'
+ outputting to '.\\test\\anonymization\\__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file '.\\test\\detection\\detector_test.py'
+ outputting to '.\\test\\detection\\detector_test.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file '.\\test\\detection\\weights_test.py'
+ outputting to '.\\test\\detection\\weights_test.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file '.\\test\\detection\\__init__.py'
+ outputting to '.\\test\\detection\\__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file '.\\test\\obfuscation\\obfuscator_test.py'
+ outputting to '.\\test\\obfuscation\\obfuscator_test.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file '.\\test\\obfuscation\\__init__.py'
+ outputting to '.\\test\\obfuscation\\__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file '.\\test\\utils\\box_test.py'
+ outputting to '.\\test\\utils\\box_test.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file '.\\test\\utils\\__init__.py'
+ outputting to '.\\test\\utils\\__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
