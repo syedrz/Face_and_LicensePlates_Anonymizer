@@ -1,7 +1,7 @@
 # understand.ai Anonymizer
 
-To improve privacy and make it easier for companies to comply with GDPR, we at [understand.ai](https://understand.ai/) 
-decided to open-sourcing our anonymization software and weights for a model trained on our in-house datasets 
+To improve privacy and make it easier for companies to comply with GDPR, [understand.ai](https://understand.ai/) 
+decided to open-sourcing their anonymization software and weights for a model trained on their in-house datasets 
 for faces and license plates.  
 To make it easy for everyone to use these weights in their own projects the model is trained with 
 [Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection).
@@ -12,26 +12,13 @@ We are looking forward to a widespread use and would love to hear your feedback.
 Feel free to contact us with any questions at anonymizer@understand.ai.
 
 
-## Disclaimer
-
-Note that the version here is not identical to the anonymizer we use with our customers. The models are fairly similar,
-but the glue-code is written for easy-of-use instead of speed.  
-For this reason no multiprocessing code or batched detection and blurring are used in this repository.
-
-This version of our anonymizer is trained to detect faces and license plates in images recorded with sensors that are
-typically used in autonomous vehicles. It will not work on low-quality or grayscale images and will also not work on 
-fish-eye or other extreme camera  configuration.
-If there is high demand for models specialised for certain camera configurations, we might decide to open-source our 
-more specialised models as well.
-
-
 ## Examples
 
-![License Plate Example Raw](images/coco02.jpg?raw=true "Title")
-![License Plate Anonymized](images/coco02_anonymized.jpg?raw=true "Title")
+![License Plate Example Raw](images/Riaz_1.jpg?raw=true "Title")
+![License Plate Anonymized](output/Riaz_1_anonymized.jpg?raw=true "Title")
 
 ![Face Example Raw](images/coco01.jpg?raw=true "Title")
-![Face Example Anonymized](images/coco01_anonymized.jpg?raw=true "Title")
+![Face Example Anonymized](output/coco01_anonymized.jpg?raw=true "Title")
 
 
 ## Installation
